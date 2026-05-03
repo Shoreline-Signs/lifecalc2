@@ -15,6 +15,7 @@ const COLOR_MAP = {
   blue:   { bg: 'bg-blue-50',   border: 'border-blue-200',   icon: 'bg-blue-100 text-blue-600',   btn: 'bg-blue-600 hover:bg-blue-700' },
   purple: { bg: 'bg-purple-50', border: 'border-purple-200', icon: 'bg-purple-100 text-purple-600', btn: 'bg-purple-600 hover:bg-purple-700' },
   green:  { bg: 'bg-green-50',  border: 'border-green-200',  icon: 'bg-green-100 text-green-600',  btn: 'bg-green-600 hover:bg-green-700' },
+  red:    { bg: 'bg-red-50',    border: 'border-red-200',    icon: 'bg-red-100 text-red-600',      btn: 'bg-red-600 hover:bg-red-700' },
   orange: { bg: 'bg-orange-50', border: 'border-orange-200', icon: 'bg-orange-100 text-orange-600', btn: 'bg-orange-600 hover:bg-orange-700' },
   teal:   { bg: 'bg-teal-50',   border: 'border-teal-200',   icon: 'bg-teal-100 text-teal-600',   btn: 'bg-teal-600 hover:bg-teal-700' },
 };
@@ -23,9 +24,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{SITE_NAME} — Free Financial Calculators for Mortgage, Car, LOC, Renovation & More</title>
+        <title>{SITE_NAME} — Free Financial Calculators for Mortgage, Car, LOC, Credit Card, Renovation & More</title>
         <meta name="description" content={SITE_DESCRIPTION} />
-        <meta name="keywords" content="mortgage calculator, car loan calculator, line of credit calculator, renovation cost calculator, boat affordability calculator, financial calculators" />
+        <meta name="keywords" content="mortgage calculator, car loan calculator, line of credit calculator, credit card payoff calculator, renovation cost calculator, boat affordability calculator, financial calculators" />
         <meta property="og:title" content={`${SITE_NAME} — Free Financial Calculators`} />
         <meta property="og:description" content={SITE_DESCRIPTION} />
         <meta property="og:type" content="website" />
@@ -56,7 +57,7 @@ export default function Home() {
               <span className="text-accent-400">Built for Real Life</span>
             </h1>
             <p className="text-lg text-blue-100 mb-8 max-w-2xl leading-relaxed">
-              Instant, accurate calculations for mortgages, car loans, lines of credit, home renovations, and recreational purchases. Get the full picture — monthly payments, total interest, and true cost of ownership.
+              Instant, accurate calculations for mortgages, car loans, lines of credit, credit cards, home renovations, and recreational purchases. Get the full picture — monthly payments, total interest, and true cost of ownership.
             </p>
             <div className="flex flex-wrap gap-3">
               {CALCULATORS.map(c => (
@@ -116,7 +117,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </Link>{ value: '6', label: 'Free Calculators' },
+              </Link>
             );
           })}
         </div>
