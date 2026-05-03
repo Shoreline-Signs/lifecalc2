@@ -5,7 +5,7 @@ import { CALCULATORS, SITE_NAME, SITE_DESCRIPTION } from '../lib/seo';
 import AdSlot from '../components/ads/AdSlot';
 
 const STATS = [
-  { value: '5', label: 'Free Calculators' },
+  { value: '6', label: 'Free Calculators' },
   { value: '100%', label: 'Client-Side — No Data Stored' },
   { value: '0', label: 'Sign-ups Required' },
   { value: '∞', label: 'Calculations Available' },
