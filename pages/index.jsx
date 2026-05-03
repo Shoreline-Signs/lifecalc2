@@ -116,7 +116,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </Link>
+              </Link>{ value: '6', label: 'Free Calculators' },
             );
           })}
         </div>
