@@ -7,7 +7,14 @@ export default function Document() {
       <Head>
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+
+        {/* Montserrat Font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />

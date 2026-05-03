@@ -34,8 +34,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        display: ['Georgia', 'Cambria', 'serif'],
-        body: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Montserrat', 'system-ui', 'sans-serif'],
+        body: ['Montserrat', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         mono: ['Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       animation: {
