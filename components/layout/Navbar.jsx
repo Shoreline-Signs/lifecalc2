@@ -39,6 +39,15 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <Link
+              href="/blog"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+                router.pathname.startsWith('/blog') ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+              }`}
+            >
+              <span>📝</span>
+              <span>Blog</span>
+            </Link>
           </nav>
 
           {/* Right */}
@@ -92,6 +101,16 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <Link
+              href="/blog"
+              onClick={() => setMenuOpen(false)}
+              className={`flex items-center gap-2 px-3 py-3 rounded-lg text-sm font-medium mb-1 transition-all ${
+                router.pathname.startsWith('/blog') ? 'bg-brand-50 text-brand-700' : 'text-slate-700 hover:bg-slate-100'
+              }`}
+            >
+              <span className="text-lg">📝</span>
+              <span>Blog & Financial Guides</span>
+            </Link>
           </div>
         )}
       </div>
