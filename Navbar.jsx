@@ -7,13 +7,14 @@ import { CALCULATORS } from '../../lib/seo';
 export default function Navbar() {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [calcOpen, setCalcOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm no-print">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group shrink-0">
             <div className="w-8 h-8 bg-gradient-to-br from-brand-600 to-brand-800 rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
               <span className="text-white text-sm font-bold">L</span>
             </div>
@@ -27,26 +28,26 @@ export default function Navbar() {
             {CALCULATORS.map(link => {
               const isActive = router.pathname === link.href;
               return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
-                    isActive ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                  }`}
-                >
+                <Link key={link.href} href={link.href}
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${isActive ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}>
                   <span>{link.icon}</span>
                   <span>{link.shortTitle}</span>
                 </Link>
               );
             })}
+            <Link href="/blog"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${router.pathname.startsWith('/blog') ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}>
+              <span>📝</span><span>Blog</span>
+            </Link>
           </nav>
 
           {/* Right */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <Link href="/about" className="hidden sm:block text-sm text-slate-500 hover:text-slate-900 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors font-medium">About</Link>
             <button
               onClick={() => {
                 if (navigator.share) {
-                  navigator.share({ title: 'LifeCalc — Financial Calculators', url: window.location.href });
+                  navigator.share({ title: 'LifeCalc — Financial Life Clarity', url: window.location.href });
                 } else {
                   navigator.clipboard.writeText(window.location.href);
                   alert('Link copied!');
@@ -59,15 +60,9 @@ export default function Navbar() {
               </svg>
               Share
             </button>
-            <button
-              className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
+            <button className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" onClick={() => setMenuOpen(!menuOpen)}>
               <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {menuOpen
-                  ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                }
+                {menuOpen ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
               </svg>
             </button>
           </div>
@@ -79,19 +74,25 @@ export default function Navbar() {
             {CALCULATORS.map(link => {
               const isActive = router.pathname === link.href;
               return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`flex items-center gap-2 px-3 py-3 rounded-lg text-sm font-medium mb-1 transition-all ${
-                    isActive ? 'bg-brand-50 text-brand-700' : 'text-slate-700 hover:bg-slate-100'
-                  }`}
-                >
+                <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
+                  className={`flex items-center gap-2 px-3 py-3 rounded-lg text-sm font-medium mb-1 transition-all ${isActive ? 'bg-brand-50 text-brand-700' : 'text-slate-700 hover:bg-slate-100'}`}>
                   <span className="text-lg">{link.icon}</span>
                   <span>{link.title}</span>
                 </Link>
               );
             })}
+            <Link href="/blog" onClick={() => setMenuOpen(false)}
+              className={`flex items-center gap-2 px-3 py-3 rounded-lg text-sm font-medium mb-1 transition-all ${router.pathname.startsWith('/blog') ? 'bg-brand-50 text-brand-700' : 'text-slate-700 hover:bg-slate-100'}`}>
+              <span className="text-lg">📝</span><span>Blog & Financial Guides</span>
+            </Link>
+            <Link href="/about" onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 px-3 py-3 rounded-lg text-sm font-medium mb-1 text-slate-700 hover:bg-slate-100">
+              <span className="text-lg">ℹ️</span><span>About LifeCalc</span>
+            </Link>
+            <Link href="/contact" onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 px-3 py-3 rounded-lg text-sm font-medium mb-1 text-slate-700 hover:bg-slate-100">
+              <span className="text-lg">📬</span><span>Contact</span>
+            </Link>
           </div>
         )}
       </div>
