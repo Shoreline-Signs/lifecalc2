@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
         <title>Privacy Policy | LifeCalc</title>
         <meta name="description" content="LifeCalc privacy policy — how we collect, use, and protect your information." />
         <link rel="canonical" href="https://www.yourlifecalc.com/privacy-policy" />
-        <meta name="robots" content="noindex" />
+
       </Head>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
